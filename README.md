@@ -21,6 +21,7 @@ DE
 01feb2021
 
 __---------------------------------------------------------------------------
+
 A follow up: I used the translator to update a design previously imported into KiCAD.
 
 Encountered some problems:
@@ -40,4 +41,5 @@ operation on the translated netlist, but with only a few changes, the <Add footp
 tool allows the user to brows previously associated libraries and pick the footprint of interest.
   
   DE
+  
   08feb2021
