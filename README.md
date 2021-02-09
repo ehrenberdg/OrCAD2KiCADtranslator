@@ -19,3 +19,25 @@ the output netlist. I might create a table driven program to do this function in
 
 DE 
 01feb2021
+
+__---------------------------------------------------------------------------
+A follow up: I used the translator to update a design previously imported into KiCAD.
+
+Encountered some problems:
+1) To allow users to embedded whitespace into component values I read the OrCAD value field with getline()
+as the value would appears as two (or more tokens), e.g. 1uF50V versus 1uF 50V. HOWEVER, PCBnew (KiCAD's 
+layout tool) balked at the embedded white space. The error messages from PCBnew located the "error" and was
+repaired with a text editor.
+2) KiCAD replaces user netnames internally with a node number. When updating the netlist the KiCAD layout was
+hopelessly scramlbled and I exited PCBnew without saving the changes. On the second try I clicked the radio
+button "Re-associated footprints by refernce" (as apposed to "Keep existing symbol to footprint associations")
+and the update when smoothly.
+
+To avoid associating new footprints by hand (using a text editor) I "preloaded" the new footprints in PCBnew
+using the <Add footprint> command off the right hand menu. The generic reference (as loaded from the library)
+was updated to the new references imported from OrCAD Capture. Of course, one could use a text editor for this
+operation on the translated netlist, but with only a few changes, the <Add footprint> command was handy. The
+tool allows the user to brows previously associated libraries and pick the footprint of interest.
+  
+  DE
+  08feb2021
